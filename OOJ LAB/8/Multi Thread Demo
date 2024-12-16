@@ -1,0 +1,30 @@
+class CollegeThread extends Thread {
+    private String message;
+    private int delay;
+
+    CollegeThread(String message, int delay) {
+        this.message = message;
+        this.delay = delay;
+    }
+
+    public void run() {
+        try {
+            while (true) {
+                System.out.println(message);
+                Thread.sleep(delay);
+            }
+        } catch (InterruptedException e) {
+            System.out.println("Thread interrupted: " + e.getMessage());
+        }
+    }
+}
+
+public class MultiThreadDemo {
+    public static void main(String[] args) {
+        CollegeThread thread1 = new CollegeThread("BMS College of Engineering", 10000); 
+        CollegeThread thread2 = new CollegeThread("CSE", 2000); 
+
+        thread1.start();
+        thread2.start();
+    }
+}
