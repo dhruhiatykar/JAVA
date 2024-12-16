@@ -1,0 +1,72 @@
+abstract class Animal {
+    String food;
+    int sleep;
+    Animal(String food, int sleep) {
+        this.food = food;
+        this.sleep = sleep;
+    }
+
+    abstract void Eat();
+    abstract void Sleep();
+}
+
+class Lion extends Animal {
+    Lion(String meal, int rest) {
+        super(meal, rest);
+    }
+
+    @Override
+    void Eat() {
+        System.out.println("The lion enjoys a hearty meal of fresh meat.");
+    }
+
+    @Override
+    void Sleep() {
+        System.out.println("The lion sleeps peacefully for " + sleep + " hours.");
+    }
+}
+
+class Tiger extends Animal {
+    Tiger(String meal, int rest) {
+        super(meal, rest);
+    }
+
+    @Override
+    void Eat() {
+        System.out.println("The tiger feasts on a large deer.");
+    }
+
+    @Override
+    void Sleep() {
+        System.out.println("The tiger sleeps soundly for " + sleep + " hours.");
+    }
+}
+
+class Deer extends Animal {
+    Deer(String meal, int rest) {
+        super(meal, rest);
+    }
+
+    @Override
+    void Eat() {
+        System.out.println("The deer munches on fresh green grass.");
+    }
+
+    @Override
+    void Sleep() {
+        System.out.println("The deer rests in the meadow for " + sleep + " hours.");
+    }
+}
+class AnimalTest {
+    public static void main(String[] args) {
+        Animal lion = new Lion("Meat", 6);
+        Animal tiger = new Tiger("Deer", 7);
+        Animal deer = new Deer("Grass", 4);
+        lion.Eat();
+        lion.Sleep();
+        tiger.Eat();
+        tiger.Sleep();
+        deer.Eat();
+        deer.Sleep();
+    }
+}
